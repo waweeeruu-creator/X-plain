@@ -14,7 +14,136 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      xplain_dossiers: {
+        Row: {
+          audience: string
+          cost: string
+          created_at: string
+          gaps: string
+          how_it_helps: string
+          id: string
+          overview: string
+          owner_id: string
+          problem: string
+          project_id: string
+          technicality: string
+          updated_at: string
+          version_number: number
+        }
+        Insert: {
+          audience?: string
+          cost?: string
+          created_at?: string
+          gaps?: string
+          how_it_helps?: string
+          id?: string
+          overview?: string
+          owner_id: string
+          problem?: string
+          project_id: string
+          technicality?: string
+          updated_at?: string
+          version_number: number
+        }
+        Update: {
+          audience?: string
+          cost?: string
+          created_at?: string
+          gaps?: string
+          how_it_helps?: string
+          id?: string
+          overview?: string
+          owner_id?: string
+          problem?: string
+          project_id?: string
+          technicality?: string
+          updated_at?: string
+          version_number?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "xplain_dossiers_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "xplain_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      xplain_projects: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          owner_id: string
+          summary: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          owner_id: string
+          summary?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          owner_id?: string
+          summary?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      xplain_sources: {
+        Row: {
+          byte_size: number | null
+          content_text: string
+          created_at: string
+          id: string
+          mime_type: string | null
+          owner_id: string
+          project_id: string
+          source_type: string
+          storage_path: string | null
+          title: string
+        }
+        Insert: {
+          byte_size?: number | null
+          content_text?: string
+          created_at?: string
+          id?: string
+          mime_type?: string | null
+          owner_id: string
+          project_id: string
+          source_type: string
+          storage_path?: string | null
+          title: string
+        }
+        Update: {
+          byte_size?: number | null
+          content_text?: string
+          created_at?: string
+          id?: string
+          mime_type?: string | null
+          owner_id?: string
+          project_id?: string
+          source_type?: string
+          storage_path?: string | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "xplain_sources_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "xplain_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

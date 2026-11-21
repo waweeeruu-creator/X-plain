@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1795286751375,
+      "tag": "0000_create_xplain_workspace",
+      "breakpoints": true
+    }
+  ]
 }
