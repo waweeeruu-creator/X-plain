@@ -49,3 +49,5 @@ export function createEmptyDossier(): DossierContent {
     gaps: "",
   };
 }
+// Per-source text limit, shared by the upload screen and the server check.
+export const MAX_SOURCE_CHARS = 150_000;
